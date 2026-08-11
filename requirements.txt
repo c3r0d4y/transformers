@@ -1,0 +1,28 @@
+# Dependencias del pipeline de deteccion de phishing.
+#
+#   pip install -r requirements.txt
+#
+# NOTA SOBRE PYTORCH
+# La rueda de torch que viene de PyPI se compila contra la version de CUDA mas
+# reciente y ya no incluye codigo para GPUs Pascal (GTX 10xx, Quadro P-series,
+# capacidad de computo 6.x). Si tu GPU es de esa generacion, instala torch desde
+# el indice de CUDA 12.6 ANTES de este archivo:
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cu126
+#
+# Sin GPU:
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+# El script setup.sh hace esta deteccion automaticamente.
+
+torch>=2.4,<3
+transformers>=4.40,<5
+datasets>=2.19,<5
+peft>=0.11
+accelerate>=0.30
+scikit-learn>=1.3
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.7
+joblib>=1.3

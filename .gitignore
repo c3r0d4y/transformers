@@ -1,0 +1,24 @@
+# Entorno virtual que crea setup.sh
+.venv/
+venv/
+
+# Archivos temporales que genera Python al importar modulos
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Datos: el corpus se descarga de Hugging Face la primera vez que corre
+# el pipeline, por eso no se guarda aqui (pesa 96 MB). La unica excepcion
+# es el banco de 100 correos en espanol, que si forma parte del proyecto.
+data/*
+!data/es_test.csv
+
+# Modelos entrenados: mas de 4 GB. Se vuelven a generar corriendo el pipeline.
+models/
+
+# Resultados de cada corrida (metricas, predicciones, registro de ejecucion).
+# Tambien se regeneran, y cambian en cada corrida.
+results/
+
+# Cache de descargas de Hugging Face
+.cache/
