@@ -210,7 +210,7 @@ están abajo, en Resultados.
 
 ## Resultados
 
-Corrida sobre el corpus completo (18,650 correos, 13,123 tras quitar duplicados),
+Corrida sobre el corpus completo (18,650 correos, 17,500 tras quitar duplicados),
 3 épocas de fine-tuning y 5 de LoRA, en una Quadro P4000:
 
 | Modelo | F1 | F1-macro | Parámetros entrenados | Tiempo |
@@ -337,9 +337,14 @@ tabla comparativa final.
 
 ## Datos y licencia
 
+Este proyecto se distribuye bajo licencia MIT; el texto completo está en
+[`LICENSE`](LICENSE).
+
 Corpus: [`zefang-liu/phishing-email-dataset`](https://huggingface.co/datasets/zefang-liu/phishing-email-dataset),
 copia en Hugging Face del *Phishing Email Detection* de Kaggle, licencia LGPL-3.0.
-Es un corpus en inglés de aproximadamente 18,650 correos etiquetados.
+Es un corpus en inglés de aproximadamente 18,650 correos etiquetados. El corpus se
+descarga al correr el pipeline y no se redistribuye en este repositorio, así que su
+licencia no se propaga al código.
 
 Este modelo es un trabajo académico. No está calibrado para desplegarse como filtro real
 de correo, y la etapa `espanol` muestra por qué: entrenado solo con inglés, su desempeño
